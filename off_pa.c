@@ -51,7 +51,7 @@ unsigned long handle_free(unsigned long *pool, unsigned long handle)
 	return 0UL;
 }
 
-#define LOCAL_SESSIONS_NUM 7
+#define LOCAL_SESSIONS_NUM 60
 unsigned long local_sessions = 0;
 struct session *vap_to_session[LOCAL_SESSIONS_NUM] = { 0, 0, 0, 0, 0, 0, 0};
 
