@@ -15,7 +15,7 @@ unsigned long find_first_zero_bit(unsigned long *pool, unsigned long size)
 {
 	unsigned long candidate = 0;
 
-	while (candidate < size && (*pool & (1 << candidate)))
+	while (candidate < size && (*pool & (1UL << candidate)))
 		candidate++;
 
 	return candidate;
@@ -23,15 +23,15 @@ unsigned long find_first_zero_bit(unsigned long *pool, unsigned long size)
 
 unsigned long test_and_set_bit(unsigned long candidate, unsigned long *pool)
 {
-	unsigned long old_value = *pool & (1 << candidate);
+	unsigned long old_value = *pool & (1UL << candidate);
 
-	*pool |= 1 << candidate;
+	*pool |= 1UL << candidate;
 
 	return old_value;
 }
 
 void clear_bit(unsigned long handle, unsigned long *pool) {
-	*pool &= ~(1 << handle);
+	*pool &= ~(1UL << handle);
 }
 
 unsigned long handle_alloc(unsigned long *pool, unsigned long size)
