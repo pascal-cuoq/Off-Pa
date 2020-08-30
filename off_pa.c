@@ -135,7 +135,7 @@ void session_build(char session_type)
 		vap_to_session[s->subif >> VAP_OFFSET] = s;
 	}
 
-	printf("Build Session type %c / %p\n",session_type, s);
+	printf("Build Session type %c / %p\n",session_type, (void*)s);
 }
 
 void op(char *cmd)
