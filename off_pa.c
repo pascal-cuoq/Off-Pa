@@ -48,6 +48,7 @@ unsigned long handle_alloc(unsigned long *pool, unsigned long size)
 unsigned long handle_free(unsigned long *pool, unsigned long handle)
 {
 	clear_bit(handle, pool);
+	return 0UL;
 }
 
 #define LOCAL_SESSIONS_NUM 7
